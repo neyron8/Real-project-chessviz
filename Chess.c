@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int main() {
-printf("\n");
+
 int i, j;
 char chessboard[8][8] = {
 "LHSQKSHL",
