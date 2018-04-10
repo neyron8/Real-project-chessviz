@@ -8,7 +8,7 @@ typedef enum {
     Bishop,
     Queen,
     King
-} PieceType;
+} Type;
 
 typedef enum {
     White,
@@ -21,8 +21,8 @@ typedef enum {
 } Check;
 
 typedef struct {
-    check fill;
-    PieceType piecetype;
+    Check fill;
+    Type type;
     Color color;
 } Cell;
 
