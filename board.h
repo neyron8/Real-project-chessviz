@@ -30,4 +30,8 @@ typedef struct {
     Cell cell [8][8];
 } Board;
 
+void standard_board(Board* board);
+void make_board(Board* board);
+void print_board(Board board);
+
 #endif
