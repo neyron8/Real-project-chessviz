@@ -1,5 +1,5 @@
-#ifndef CHESS_D
-#define CHESS_D
+#ifndef CHESS_XD
+#define CHESS_XD
  
 typedef enum {
     Pawn,
@@ -18,10 +18,10 @@ typedef enum {
 typedef enum {
     false,
     true
-} Check;
+} Be_Not;
 
 typedef struct {
-    Check fill;
+    Be_Not fill;
     Type type;
     Color color;
 } Cell;
@@ -29,9 +29,5 @@ typedef struct {
 typedef struct {
     Cell cell [8][8];
 } Board;
-
-void standard_board(Board* board);
-void make_board(Board* board);
-void print_board(Board board);
 
 #endif
