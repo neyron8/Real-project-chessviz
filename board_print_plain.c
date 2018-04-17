@@ -115,6 +115,9 @@ void print(Board board) {
 
     for (line = 0; line < 8; line++) {
         for (col = 0; col < 8; col++) {
+			if (board.cell[line][col].fill == 0) {
+				printf("*"); 
+			}
             if (board.cell[line][col].fill) {
                 switch (board.cell[line][col].type) {
                 case Pawn:
