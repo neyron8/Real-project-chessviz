@@ -1,22 +1,29 @@
-#include <stdio.h>  // CHANGE .H and other
 #include "board.h"
+#include <stdlib.h>
+#include <ctype.h>
+#include <stdio.h>
 
-int what_is_piece (char *h, Board *board)
-{
-	int flag = 0;
-	for ( char ltr = 'a'; ltr != 'i'; ltr++) {
-		for (int i = 0; i < 8; i++) {
-			if(h[3] == ltr) {
-				if((h[4] - 48) == i) {
-					if(board -> cell[(h[3] - 97)][i].type == Pawn) {
-						printf("\nPAWN DETECTED");
-						flag = 1;
-						return 1;
-					}
-				}	
-		    }
-		}
-	}
-	if (flag == 0)
-		return 0;
+int move (char *string, Board *board) {
+	int bl_ch1, wh_ch1, bl_dig1, wh_dig1, bl_ch2, wh_ch2, bl_dig2, wh_dig2;
+	wh_ch1 = (string[3] - 97);
+	wh_ch2 = (string[9] - 97);
+	bl_ch1 = (string[6] - 97);
+	bl_ch2 = (string[12] - 97);
+	wh_dig1 = (7 - ((string[4] - 48) - 1));
+	wh_dig2 = 7 - ((string[7] - 48)-1);
+	bl_dig1 = (7 - ((string[10] - 48) - 1));
+	bl_dig2 = (7 - ((string[13] - 48) - 1));
+	
+    system("clear");
+	board -> cell [wh_dig1][wh_ch1].fill = 0;
+
+	board -> cell [wh_dig2][wh_ch2].type = Pawn;
+	board -> cell [wh_dig2][wh_ch2].fill = 1;
+
+	board -> cell [bl_dig1][bl_ch1].fill = 0;
+
+	board -> cell [bl_dig2][bl_ch2].type = Pawn;
+	board -> cell [bl_dig2][bl_ch2].fill = 1;
+	
+	return 0;
 }
