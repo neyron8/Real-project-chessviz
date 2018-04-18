@@ -18,3 +18,6 @@ make:
 	mkdir -p bin
 	mkdir -p build
 
+.PHONY: clean
+clean:
+	rm -rf ./build/*.o
