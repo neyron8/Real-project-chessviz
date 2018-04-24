@@ -1,22 +1,18 @@
 C = gcc
 flag = -c -Wall -Werror 
 
-all: chess
-chess: make main.o ChessPrint.o board.o
+./bin/chess: ./build/main.o ./build/board_print_plain.o ./build/board.o
 	$(C) ./build/main.o  ./build/board_print_plain.o ./build/board.o -o ./bin/chess
 
-main.o:
-	$(C) $(flag) ./main.c -o ./build/main.o
+./build/main.o: ./src/main.c
+	$(C) $(flag) ./src/main.c -o ./build/main.o
 
-ChessPrint.o:
-	$(C) $(flag) ./board_print_plain.c -o ./build/board_print_plain.o
+./build/board_print_plain.o: ./src/board_print_plain.c
+	$(C) $(flag) ./src/board_print_plain.c -o ./build/board_print_plain.o
 
-board.o:
-	$(C) $(flag) ./board.c -o ./build/board.o
+./build/board.o: ./src/board.c
+	$(C) $(flag) ./src/board.c -o ./build/board.o
 
-make:
-	mkdir -p bin
-	mkdir -p build
 
 .PHONY: clean
 clean:
