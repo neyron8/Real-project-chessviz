@@ -13,7 +13,7 @@ int main () {
     printf("\nPrintnig...\n");
     print(place);
 	char s [] = {"1. b2-b4 b7-b5"};
-	move (s,&place);
+	move_pawn (s,&place);
 	print(place);
     return 0;
 }

@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <stdio.h>
 
-int move (char *string, Board *board) {
+int move_pawn (char *string, Board *board) {
 	int bl_ch1, wh_ch1, bl_dig1, wh_dig1, bl_ch2, wh_ch2, bl_dig2, wh_dig2;
 
 	wh_ch1 = (string[3] - 97);
