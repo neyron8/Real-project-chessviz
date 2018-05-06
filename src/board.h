@@ -1,11 +1,11 @@
 #ifndef CHESS_XD
 #define CHESS_XD
- 
+
 typedef enum {
-    Pawn,
-    Rook,
-    Horse,
-    Bishop,
+    Pawn, //
+    Rook, //
+    Horse, //
+    Bishop,  //
     Queen,
     King
 } Type;

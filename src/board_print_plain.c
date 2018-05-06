@@ -3,7 +3,7 @@
 
 void make_board(Board* board){
     int line,col;
-    
+
     for (col = 0; col < 8; col++) {
         for(line = 0; line < 8; line++) {
             board->cell[line][col].fill = 0;
@@ -13,21 +13,21 @@ void make_board(Board* board){
 
 void standard_board(Board* board) {
     int line,col;
-    
+
     line = 1;
 
     for (col = 0; col <= 7; col++) {
         board->cell[line][col].fill = 1;
         board->cell[line][col].type = Pawn;
-        board->cell[line][col].color = Black;               
+        board->cell[line][col].color = Black;
     }
 
     line = 6;
 
     for (col = 0; col <= 7; col++) {
         board->cell[line][col].fill = 1;
-        board->cell[line][col].type = Pawn;   
-        board->cell[line][col].color = White;        
+        board->cell[line][col].type = Pawn;
+        board->cell[line][col].color = White;
     }
 
     line = 0;
@@ -68,7 +68,7 @@ void standard_board(Board* board) {
     }
 
     line = 7;
-    
+
     for (col = 0; col <= 7; col++) {
         switch(col){
         case 0:
@@ -116,7 +116,7 @@ void print(Board board) {
     for (line = 0; line < 8; line++) {
         for (col = 0; col < 8; col++) {
 			if (board.cell[line][col].fill == 0) {
-				printf("*"); 
+				printf("*");
 			}
             if (board.cell[line][col].fill) {
                 switch (board.cell[line][col].type) {
@@ -164,7 +164,7 @@ void print(Board board) {
                     break;
                 }
             }
-            
+
             if (col == 7) {
                 printf("\n");
             }
@@ -172,3 +172,102 @@ void print(Board board) {
     }
 }
 
+void test_board(Board* board) {
+    int line,col;
+
+    //line = 1;
+
+    //for (col = 0; col <= 7; col++) {
+     //   board->cell[line][col].fill = 1;
+     //   board->cell[line][col].type = Pawn;
+     //   board->cell[line][col].color = Black;
+    //}
+
+   // line = 6;
+
+   // for (col = 0; col <= 7; col++) {
+    //    board->cell[line][col].fill = 1;
+    //    board->cell[line][col].type = Pawn;
+    //    board->cell[line][col].color = White;
+   // }
+
+    line = 0;
+
+    for (col = 0; col <= 7; col++) {
+        switch(col) {
+        case 0:
+        case 7:
+            board->cell[line][col].fill = 1;
+            board->cell[line][col].type = Rook;
+            board->cell[line][col].color = Black;
+            break;
+        case 1:
+        case 6:
+            board->cell[line][col].fill = 1;
+            board->cell[line][col].type = Horse;
+            board->cell[line][col].color = Black;
+            break;
+        case 2:
+        case 5:
+            board->cell[line][col].fill = 1;
+            board->cell[line][col].type = Bishop;
+            board->cell[line][col].color = Black;
+            break;
+        case 3:
+            board->cell[line][col].fill = 1;
+            board->cell[line][col].type = Queen;
+            board->cell[line][col].color = Black;
+            break;
+        case 4:
+            board->cell[line][col].fill = 1;
+            board->cell[line][col].type = King;
+            board->cell[line][col].color = Black;
+            break;
+        default:
+            break;
+        }
+    }
+
+    line = 7;
+
+    for (col = 0; col <= 7; col++) {
+        switch(col){
+        case 0:
+        case 7:
+            board->cell[line][col].fill = 1;
+            board->cell[line][col].type = Rook;
+            board->cell[line][col].color = White;
+            break;
+        case 1:
+        case 6:
+            board->cell[line][col].fill = 1;
+            board->cell[line][col].type = Horse;
+            board->cell[line][col].color = White;
+            break;
+        case 2:
+        case 5:
+            board->cell[line][col].fill = 1;
+            board->cell[line][col].type = Bishop;
+            board->cell[line][col].color = White;
+            break;
+        case 3:
+            board->cell[line][col].fill = 1;
+            board->cell[line][col].type = Queen;
+            board->cell[line][col].color = White;
+            break;
+        case 4:
+            board->cell[line][col].fill = 1;
+            board->cell[line][col].type = King;
+            board->cell[line][col].color = White;
+            break;
+        default:
+            break;
+        }
+    }
+
+    for (line = 3; line < 4; line++) {
+        for (col = 0; col < 8; col++) {
+            board->cell[line][col].fill = 0;
+        }
+    }
+}

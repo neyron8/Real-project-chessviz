@@ -1,3 +1,4 @@
+C = gcc
 flag = -c -Wall -Werror
 
 all: ./bin/chess ./bin/test
@@ -27,3 +28,7 @@ all: ./bin/chess ./bin/test
 .PHONY: clean
 clean:
 	rm -rf ./build/src/*.o
+
+.PHONY: test
+test:
+	./bin/test
